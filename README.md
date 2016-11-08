@@ -1,12 +1,12 @@
 # Composer template for Islandora 7.x
 
-This is a remix of the https://github.com/drupal-composer/drupal-project Drupal template
-serving as a proof-of concept for a Composer-based installation of Islandora 7.x.  Composer-based installs are
-gaining traction, especially in Drupal 8, as an off-the-island replacement for Drush Makefiles and the like.
+This is a remix of the https://github.com/drupal-composer/drupal-project Drupal template.
+It is a proof-of concept for Composer-based installation of Islandora 7.x.  Composer-based installs are
+gaining traction, especially for Drupal 8, as an off-the-island replacement for Drush Makefiles and the like.
 
-This calls a proof-of-concept Satis server at https://islandorapkg.shorock.com
+This calls on a proof-of-concept Satis server at https://islandorapkg.shorock.com
 
-If you're curious how that was generated, check out https://github.com/shorock/islandora_satis
+If you're curious how that Satis server was generated, check out https://github.com/shorock/islandora_satis
 
 ## TL;DR
 
@@ -45,10 +45,10 @@ This composer.json will give you:
 
 `composer require islandora/islandora_solution_pack_audio`
 
-`composer require islandora/islandora:1.x-dev` (git clones HEAD for you... you could set everything to 1.x-dev for bleeding-edge, or maybe a CI script)
+`composer require islandora/islandora:1.x-dev` (git clones HEAD for you... you could set everything to 1.x-dev for bleeding-edge, or perhaps a CI script)
 
-`composer require drupal/panels`
+`composer require drupal/panels` or other drupal mods
 
 ## To consider
 
-It would be fairly easy to build pseudo-modules that would automatically bring in JS libraries.
+It would be fairly easy to build "drupal-library" pseudo-modules using this technique that would automatically bring in JS libraries.
