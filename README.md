@@ -1,53 +1,46 @@
-# Composer template for Drupal projects
+# Composer template for Islandora 7.x
 
-[![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=7.x)](https://travis-ci.org/drupal-composer/drupal-project)
+This is a remix of the https://github.com/drupal-composer/drupal-project Drupal template
+serving as a proof-of concept for a Composer-based installation of Islandora 7.x.  Composer-based installs are
+gaining traction, especially in Drupal 8, as an off-the-island replacement for Drush Makefiles and the like.
 
-This project template should provide a kickstart for managing your site 
-dependencies with [Composer](https://getcomposer.org/).
+This calls a proof-of-concept Satis server at https://islandorapkg.shorock.com
 
-If you want to know, how to use it as replacement for
-[Drush Make](https://github.com/drush-ops/drush/blob/master/docs/make.md) visit
-the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
+If you're curious how that was generated, check out https://github.com/shorock/islandora_satis
 
-## Usage
+## Included
 
-First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
+This composer.json will give you:
 
-> Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
-You might need to replace `composer` with `php composer.phar` (or similar) for your setup.
+* Drupal (current 7.x)
+* Drupal views, views_ui, bootstrap theme (just to show off using Drupal installs)
+* Islandora
+  * Islandora brings in Tuque as a dependency
+* Islandora Collection, PDF and Basic Image packs
+* Islandora Pathauto (to show off pulling in Drupal's pathauto as a dependency)
 
-After that you can create the project:
+** Note: this only installs the modules, you still have to enable them with drush or /admin/modules **
 
-```
-composer create-project drupal-composer/drupal-project:7.x-dev some-dir --stability dev --no-interaction
-```
+## Installing by composer
 
-With `composer require ...` you can download new dependencies to your installation.
+* 0 (optional but highly recommended) - `composer global require hirak/prestissimo`.  You only need to do this once
+  per system/user, but
+  it [dramatically speeds up Composer/Packagist loading](https://medium.com/@petehouston/improve-composer-performance-with-prestissimo-8f3f55a20b8e#.e5vfz0fpz)
+   (parallel curl calls)
 
-```
-cd some-dir
-composer require drupal/ctools:7.*
-```
+* 1 - Clone this repo.
 
-## What does the template do?
+* 2 - `composer install`
 
-When installing the given `composer.json` some tasks are taken care of:
+* 3 - set your webroot to the "web/" directory, symlink it somewhere into your webroot... your call
 
-* Drupal will be installed in the `web`-directory.
-* Modules (packages of type `drupal-module`) will be placed in `web/sites/all/modules/contrib/`
-* Theme (packages of type `drupal-module`) will be placed in `web/sites/all/themes/contrib/`
-* Profiles (packages of type `drupal-profile`) will be placed in `web/profiles/`
+## Composer commands
 
-## Generate composer.json from existing project
+(all at the level with composer.json)
 
-With using [the "Composer Generate" drush extension](https://www.drupal.org/project/composer_generate)
-you can now generate a basic `composer.json` file from an existing project. Note
-that the generated `composer.json` might differ from this project's file.
+`composer require islandora/islandora_solution_pack_audio`
 
+`composer require islandora/islandora:1.x-dev` (git clones HEAD for you)
 
-## FAQ
-
-### Should I commit the contrib modules I download
-
-Composer recommends **no**. They provide [argumentation against but also workrounds if a project decides to do it anyway](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).
+`composer require drupal/panels`
 
