@@ -19,11 +19,11 @@ This composer.json will give you:
 * Islandora Collection, PDF and Basic Image packs
 * Islandora Pathauto (to show off pulling in Drupal's pathauto as a dependency)
 
-** Note: this only installs the modules, you still have to enable them with drush or /admin/modules **
+**Note: this only installs the modules, you still have to enable them with drush or /admin/modules.**
 
 ## Installing by composer
 
-* 0 (optional but highly recommended) - `composer global require hirak/prestissimo`.  You only need to do this once
+* Step 0 (optional but highly recommended) - `composer global require hirak/prestissimo`.  You only need to do this once
   per system/user, but
   it [dramatically speeds up Composer/Packagist loading](https://medium.com/@petehouston/improve-composer-performance-with-prestissimo-8f3f55a20b8e#.e5vfz0fpz)
    (parallel curl calls)
