@@ -8,6 +8,11 @@ This calls a proof-of-concept Satis server at https://islandorapkg.shorock.com
 
 If you're curious how that was generated, check out https://github.com/shorock/islandora_satis
 
+## TL;DR
+
+This installs Islandora from composer.json (or composer.lock) into "web/".  Relevant modules get put in
+web/sites/all/modules/contrib and web/sites/all/libraries
+
 ## Included
 
 This composer.json will give you:
@@ -43,3 +48,7 @@ This composer.json will give you:
 `composer require islandora/islandora:1.x-dev` (git clones HEAD for you... you could set everything to 1.x-dev for bleeding-edge, or maybe a CI script)
 
 `composer require drupal/panels`
+
+## To consider
+
+It would be fairly easy to build pseudo-modules that would automatically bring in JS libraries.
