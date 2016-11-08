@@ -30,13 +30,13 @@ This composer.json will give you:
 
 * 1 - Clone this repo.
 
-* 2 - `composer install`
+* 2 - `composer install` from inside it
 
-* 3 - set your webroot to the "web/" directory, symlink it somewhere into your webroot... your call
+* 3 - set your webroot to the generated "web/" directory, symlink it somewhere into your webroot... your call
 
 ## Composer commands
 
-(all at the level with composer.json)
+*(all at the level with composer.json)*
 
 `composer require islandora/islandora_solution_pack_audio`
 
