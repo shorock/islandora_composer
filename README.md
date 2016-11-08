@@ -40,7 +40,6 @@ This composer.json will give you:
 
 `composer require islandora/islandora_solution_pack_audio`
 
-`composer require islandora/islandora:1.x-dev` (git clones HEAD for you)
+`composer require islandora/islandora:1.x-dev` (git clones HEAD for you... you could set everything to 1.x-dev for bleeding-edge, or maybe a CI script)
 
 `composer require drupal/panels`
-
