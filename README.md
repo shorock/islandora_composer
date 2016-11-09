@@ -35,7 +35,9 @@ The composer.json in this package will give you:
 * Islandora
   * Islandora brings in Tuque as a dependency
 * Islandora Collection, PDF and Basic Image packs
-* Islandora Pathauto (to show off pulling in Drupal's pathauto as a dependency)
+  * bringing in the Drupal Imagemagick module
+* Islandora Pathauto
+  * pulls in Pathauto
 
 **Note: this only installs the modules, you still have to enable them with drush or /admin/modules.**
 
