@@ -13,9 +13,22 @@ If you're curious how that Satis server was generated, check out https://github.
 This installs Islandora from composer.json (or composer.lock) into "web/".  Relevant modules get put in
 web/sites/all/modules/contrib and web/sites/all/libraries
 
+## Installing Islandora via Composer
+
+* Step 0 *(optional but highly recommended)* - `composer global require hirak/prestissimo`.  You only need to do this once
+  per system/user, but
+  it [dramatically speeds up Composer/Packagist loading](https://medium.com/@petehouston/improve-composer-performance-with-prestissimo-8f3f55a20b8e#.e5vfz0fpz)
+   (parallel curl calls)
+
+* 1 - Clone this repo.
+
+* 2 - `composer install` from inside it
+
+* 3 - set your webroot to the generated "web/" directory, symlink it somewhere into your webroot... your call
+
 ## Included
 
-This composer.json will give you:
+The composer.json in this package will give you:
 
 * Drupal (current 7.x)
 * Drupal views, views_ui, bootstrap theme (just to show off using Drupal installs)
@@ -26,18 +39,6 @@ This composer.json will give you:
 
 **Note: this only installs the modules, you still have to enable them with drush or /admin/modules.**
 
-## Installing by composer
-
-* Step 0 (optional but highly recommended) - `composer global require hirak/prestissimo`.  You only need to do this once
-  per system/user, but
-  it [dramatically speeds up Composer/Packagist loading](https://medium.com/@petehouston/improve-composer-performance-with-prestissimo-8f3f55a20b8e#.e5vfz0fpz)
-   (parallel curl calls)
-
-* 1 - Clone this repo.
-
-* 2 - `composer install` from inside it
-
-* 3 - set your webroot to the generated "web/" directory, symlink it somewhere into your webroot... your call
 
 ## Composer commands
 
@@ -49,6 +50,10 @@ This composer.json will give you:
 
 `composer require drupal/panels` or other drupal mods
 
-## To consider
+## For the community to consider
 
-It would be fairly easy to build "drupal-library" pseudo-modules using this technique that would automatically bring in JS libraries.
+If other users have interest in using Composer installs, we have a few options.  It would not be hard to use Satis to make an official Islandora-hosted endpoint (like the personal one I have above).  This is low traffic... all the ZIPs come from GitHub.
+
+If there were community interest, adding an appropriate composer.json to each of the Islandora projects would make things a bit easier.  Individual projects could manage their own dependency mapping that way.  It would be possible, if the modules got composer.json files for the next release, to add the modules to Packagist.org.  There are very good reasons that the general Drupal community doesn't do that, though.
+
+Also, worth noting: it would be fairly easy to build "drupal-library" pseudo-modules using this technique that could automagically bring in (and version-lock) dependencies like PDF.js or Video.js.. as licenses permit.
