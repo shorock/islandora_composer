@@ -4,7 +4,7 @@ This is a remix of the https://github.com/drupal-composer/drupal-project Drupal 
 It is a proof-of concept for Composer-based installation of Islandora 7.x.  Composer-based installs are
 gaining traction, especially for Drupal 8, as an off-the-island replacement for Drush Makefiles and the like.
 
-This calls on a proof-of-concept Satis server at https://islandorapkg.shorock.com
+This calls on a proof-of-concept Satis site (GH Pages) at https://shorock.github.io/islandora_satis
 
 If you're curious how that Satis server was generated, check out https://github.com/shorock/islandora_satis
 

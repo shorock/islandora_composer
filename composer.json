@@ -8,7 +8,7 @@
         },
         "islandora": {
             "type": "composer",
-            "url": "https://islandorapkg.shorock.com"
+            "url": "https://shorock.github.io/islandora_satis"
         }
     },
     "require": {
