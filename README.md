@@ -15,7 +15,7 @@ web/sites/all/modules/contrib and web/sites/all/libraries
 
 ## Installing Islandora via Composer
 
-* Step 0 *(optional but highly recommended)* - `composer global require hirak/prestissimo`.  You only need to do this once
+* Step 0 *(optional but highly recommended if you're using any modern PHP with the curl library)* - `composer global require hirak/prestissimo`.  You only need to do this once
   per system/user, but
   it [dramatically speeds up Composer/Packagist loading](https://medium.com/@petehouston/improve-composer-performance-with-prestissimo-8f3f55a20b8e#.e5vfz0fpz)
    (parallel curl calls)
@@ -25,6 +25,8 @@ web/sites/all/modules/contrib and web/sites/all/libraries
 * 2 - `composer install` from inside it
 
 * 3 - set your webroot to the generated "web/" directory, symlink it somewhere into your webroot... your call
+
+* 4 - going forward, consider doing your modules installs with `composer require drupal/panels` rather than `drush dl panels`.  If you do so, those end up in composer.json and composer.lock, you can VCS them, and goodness shall follow.
 
 ## Included
 
