@@ -13,7 +13,7 @@
     },
     "require": {
         "composer/installers": "~1.0",
-        "derhasi/composer-preserve-paths": "0.1.*",
+        "drupal-composer/preserve-paths": "0.1.*",
         "drupal/drupal": "7.*",
         "islandora/islandora": "*",
         "islandora/islandora_pathauto": "*",
